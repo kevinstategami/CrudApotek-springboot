@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Obat</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+</head>
+<body>
+<h1>Form Obat</h1>
+<br/>
+<form th:action="@{/obat/saveForm}" method="post" th:object="${obat}">
+    <input type="hidden" th:field="*{id}">
+    <label>Merk :</label><br/><br/>
+    <input type="text" th:field="*{merk}"><br/>
+    <label>Harga:</label><br/><br/>
+    <input type="text" th:field="*{harga}"><br/>
+    <label>Modal :</label><br/><br/>
+    <input type="text" th:field="*{modal}"><br/>
+    <button type="submit">Simpan</button>
+</form>
+<br/><br/>
+</body>
+</html>

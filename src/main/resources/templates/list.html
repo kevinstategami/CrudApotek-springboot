@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Obat</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+</head>
+<body>
+<h1>List Obat</h1>
+<br/>
+<a th:href="@{/obat/form}">Tambah Obat</a>
+<br/><br/>
+<table border="1">
+    <thead>
+    <tr>
+        <th>Merk</th>
+        <th>Harga</th>
+        <th>Modal</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <!--/*@thymesVar id="listObat" type=""*/-->
+    <tr th:each="m:${listObat}">
+        <td th:text="${m.merk}"></td>
+        <td th:text="${m.harga}"></td>
+        <td th:text="${m.modal}"></td>
+        <td>
+            <a th:href="@{/obat/form(id=${m.id})}">Edit</a>
+            <a th:href="@{/obat/deleteObat(id=${m.id})}">Delete</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
